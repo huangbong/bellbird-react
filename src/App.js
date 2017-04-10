@@ -29,7 +29,9 @@ class App extends Component {
   }
 
   createAlarm(values) {
-    this.props.fetchCreateAlarm(values.title);
+    if (values.title) {
+      this.props.fetchCreateAlarm(values.title);
+    }
   }
 
   upvoteAlarm(alarmId) {
@@ -38,13 +40,7 @@ class App extends Component {
 
   render() {
     let content;
-    if (this.props.alarms.isFetching) {
-      content = (
-        <div className='pt-card bellbird-card'>
-          Loading...
-        </div>
-      );
-    } else if (_.isEmpty(this.props.alarms.data)) {
+    if (_.isEmpty(this.props.alarms.data)) {
       content = (
         <div className='pt-card bellbird-card'>
           No alarms found.

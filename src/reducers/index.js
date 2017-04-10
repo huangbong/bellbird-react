@@ -5,10 +5,10 @@ import { RECEIVE_CREATE_ALARM } from '../actions/alarms';
 
 const appReducer = combineReducers({
   form: formReducer.plugin({
-    createAlarm: (state, action) => { // <------ 'account' is name of form given to reduxForm()
+    createAlarm: (state, action) => {
       switch(action.type) {
         case RECEIVE_CREATE_ALARM:
-          return undefined;       // <--- blow away form data
+          return undefined;
         default:
           return state;
       }
