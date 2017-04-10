@@ -1,0 +1,52 @@
+.wrapper {
+}
+
+.container {
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 5px;
+}
+
+.header {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  position: relative;
+}
+
+.add-alarm {
+  float: right;
+  top: 4px;
+  position: relative;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.bellbird-card {
+  padding: 15px;
+  margin-bottom: 10px
+}
+
+.bellbird-card:last-child {
+  margin-bottom: 0;
+}
+
+.icon-inline {
+  margin-right: 5px;
+}
+
+.alarm-title {
+  margin-left: 7.5px;
+}
+
+.alarm-field {
+  margin-bottom: 7.5px;
+}
+
+.orange {
+  color: orange;
+}
