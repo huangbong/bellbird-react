@@ -13,4 +13,4 @@ class AlarmForm extends Component {
   }
 }
 
-export default reduxForm({ form: 'alarm' })(AlarmForm);
+export default reduxForm({ form: 'createAlarm' })(AlarmForm);
