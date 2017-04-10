@@ -4,6 +4,7 @@ import { fetchAlarms, fetchCreateAlarm, fetchUpvoteAlarm } from './actions/alarm
 import _ from 'lodash';
 import { Button } from '@blueprintjs/core';
 import AlarmForm from './components/AlarmForm';
+
 // import global styling first
 import '../node_modules/normalize.css/normalize.css';
 import '../node_modules/@blueprintjs/core/dist/blueprint.css';
@@ -36,12 +37,20 @@ class App extends Component {
   }
 
   render() {
-    let content = (
-      <div className='pt-card bellbird-card'>
-        Loading...
-      </div>
-    );
-    if (this.props.alarms.data) {
+    let content;
+    if (this.props.alarms.isFetching) {
+      content = (
+        <div className='pt-card bellbird-card'>
+          Loading...
+        </div>
+      );
+    } else if (_.isEmpty(this.props.alarms.data)) {
+      content = (
+        <div className='pt-card bellbird-card'>
+          No alarms found.
+        </div>
+      );
+    } else if (this.props.alarms.data) {
       content = _.map(this.props.alarms.data, (alarm) => {
         const alarmId = alarm.id;
         return (
